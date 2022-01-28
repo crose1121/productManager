@@ -7,5 +7,6 @@ const ProductController = require(`../controllers/${controllerFile}`) //change N
 module.exports = (app) => {
     // routes go here along with functions from controller
     app.get('/api/products',ProductController.findAllProducts)
+    app.get('/api/products/:id', ProductController.findOneProduct)
     app.post('/api/products',ProductController.createProduct)
 }

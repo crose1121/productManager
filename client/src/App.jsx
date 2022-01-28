@@ -1,4 +1,3 @@
-import './App.css';
 import NewProductForm from './components/NewProductForm';
 import {
   BrowserRouter,
@@ -6,18 +5,24 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import AllProducts from './components/AllProducts';
+import OneProduct from './components/OneProduct';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App container">
-        <h3>Product Manager!</h3>
         <Switch>
           <Route exact path="/">
+            <h3>Product Manager!</h3>
             <NewProductForm/>
+            <hr />
+            <AllProducts/>
+          </Route>
+          <Route exact path="/products/:id">
+            <OneProduct/>
           </Route>
         </Switch>
-        <hr />
       </div>
     </BrowserRouter>
   )
